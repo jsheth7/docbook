@@ -14,7 +14,7 @@ openssl rsa -in serverkey.pem -out serverkey.pem
 openssl x509 -req -days 365 -in server.csr -CA ca.pem -CAkey cakey.pem -out servercert.pem
 
 #extension file
-echo extendedKeyUsage = clientAuth > extfile.cnf
+echo "extendedKeyUsage = clientAuth" > extfile.cnf
 
 #generate client key
 openssl genrsa -des3 -out clientkey.pem 2048
